@@ -1,18 +1,32 @@
 {
-    "test1": "super test",
-    "test2": {
-        "my": {
-            "test": 10
-        }
-    },
-    "test3": {
-        "test": "test",
-        "json": {
-            "test": [
-                "test"
-            ],
-            "important": 5
+    "test": "super test",
+    "products": [
+        {
+            "id": "3332d4d0-fd37-11eb-837e-fd2a380e6fa6",
+            "name": "Brown Brim",
+            "title": "Brown Brim",
+            "description": "A Brown with awesome look",
+            "unit_price": "40",
+            "image": "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+            "createdAt": "2021-08-14 20:38:28"
         },
-        "new": "cool"
-    }
+        {
+            "id": "838c8640-fd39-11eb-a5c4-09213872a972",
+            "name": "Blue Beanie",
+            "title": "Blue Beanie",
+            "description": "An amazing product",
+            "unit_price": "100",
+            "image": "https://i.ibb.co/ypkgK0X/blue-beanie.png",
+            "createdAt": "2021-08-14 20:55:2"
+        },
+        {
+            "id": "9b231430-fd3a-11eb-b41b-ffa059dd177c",
+            "name": "Green Beanie",
+            "title": "Green Beanie",
+            "description": "An amazing product",
+            "unit_price": "18",
+            "image": "https://i.ibb.co/YTjW3vF/green-beanie.png",
+            "createdAt": "2021-08-14 21:2:51"
+        }
+    ]
 }

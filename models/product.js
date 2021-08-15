@@ -1,18 +1,19 @@
 const database = require("../utils/database");
-const products = [];
 module.exports = class Product {
-  constructor(name, title, description, unit_price, image) {
+  constructor(id, name, title, description, unit_price, image, createdAt) {
+    this.id = id;
     this.name = name;
     this.title = title;
     this.description = description;
     this.unit_price = unit_price;
     this.image = image;
+    this.createdAt = createdAt;
   }
   save() {
-    database.push("/products", this);
+    database.push("/products", [this], false);
+    return this;
   }
   static allProducts() {
-    products = database.getData("/products");
-    return products;
+    return database.getData("/products");
   }
 };
