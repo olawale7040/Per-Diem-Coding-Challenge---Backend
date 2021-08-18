@@ -1,28 +1,31 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 
 const app = express();
 
-const testRoutes = require("./routes/test");
+app.use(cors());
+app.use(express.json());
+
 const productRoutes = require("./routes/product");
-// app.use(bodyParser.urlencoded()); // x-www-form-urlencoded <form>
+const scheduleRoutes = require("./routes/schedule");
+const pickupRoutes = require("./routes/pickup");
+
 app.use(bodyParser.json()); // application/json
 
-app.use("/api/test", testRoutes);
-app.use("/api", productRoutes);
-
 app.use((req, res, next) => {
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  res.setHeader(
-    "Access-Control-Allow-Methods",
-    "OPTIONS, GET, POST, PUT, PATCH, DELETE"
+  res.header(
+    "Access-Control-Allow-Headers",
+    "x-access-token, Origin, Content-Type, Accept"
   );
-  res.setHeader("Access-Control-Allow-Headers", "Content-Type, Authorization");
   next();
 });
 
+app.use("/api", productRoutes);
+app.use("/api", scheduleRoutes);
+app.use("/api", pickupRoutes);
+
 app.use((error, req, res, next) => {
-  // console.log(error);
   const status = error.statusCode || 500;
   const message = error.message;
   const data = error.data;

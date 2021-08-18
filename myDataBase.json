@@ -3,30 +3,108 @@
     "products": [
         {
             "id": "3332d4d0-fd37-11eb-837e-fd2a380e6fa6",
-            "name": "Brown Brim",
-            "title": "Brown Brim",
-            "description": "A Brown with awesome look",
+            "name": "Fried rice",
+            "title": "Fried rice",
+            "description": "Delicious and tasty fried rice",
             "unit_price": "40",
-            "image": "https://i.ibb.co/ZYW3VTp/brown-brim.png",
+            "image": "https://png.pngtree.com/background/20210711/original/pngtree-traditional-gourmet-delicious-hangzhou-fried-rice-poster-picture-image_1121010.jpg",
             "createdAt": "2021-08-14 20:38:28"
         },
         {
             "id": "838c8640-fd39-11eb-a5c4-09213872a972",
-            "name": "Blue Beanie",
-            "title": "Blue Beanie",
-            "description": "An amazing product",
+            "name": "Jollof Rice",
+            "title": "Jollof Rice",
+            "description": "Delicious and tasty jollof rice",
             "unit_price": "100",
-            "image": "https://i.ibb.co/ypkgK0X/blue-beanie.png",
+            "image": "https://png.pngtree.com/background/20210710/original/pngtree-simple-gourmet-egg-fried-rice-recipe-poster-background-template-picture-image_1023761.jpg",
             "createdAt": "2021-08-14 20:55:2"
         },
         {
             "id": "9b231430-fd3a-11eb-b41b-ffa059dd177c",
-            "name": "Green Beanie",
-            "title": "Green Beanie",
-            "description": "An amazing product",
+            "name": "Pizza",
+            "title": "Pizza",
+            "description": "An amazing refreshment",
             "unit_price": "18",
-            "image": "https://i.ibb.co/YTjW3vF/green-beanie.png",
+            "image": "https://png.pngtree.com/background/20210715/original/pngtree-affordable-fried-rice-with-delicious-color-and-flavor-picture-image_1269179.jpg",
             "createdAt": "2021-08-14 21:2:51"
+        },
+        {
+            "id": "61a42770-fe0d-11eb-8d30-194e3c0ac45d",
+            "name": "Shawarma",
+            "title": "Shawarma",
+            "description": "An amazing refreshment",
+            "unit_price": "18",
+            "image": "https://png.pngtree.com/background/20210706/original/pngtree-fried-chicken-background-picture-image_274172.jpg",
+            "createdAt": "2021-08-15 22:11:39"
+        }
+    ],
+    "pickups": [
+        {
+            "id": "540a11d0-fe10-11eb-afdf-49205927516e",
+            "name": "Brookhaven Pickup",
+            "title": "Pickup Pickup",
+            "country": "USA",
+            "state": "New York",
+            "city": "Pickup",
+            "zip_code": "10000",
+            "address": "30303, Pickup New York USA",
+            "createdAt": "2021-08-15 22:32:44"
+        },
+        {
+            "id": "4dc0c310-ffa4-11eb-83ec-e5eb8e0ada18",
+            "name": "Dallas Pickup",
+            "title": "Dallas Pickup",
+            "country": "USA",
+            "state": "Texas",
+            "city": "Dallas",
+            "zip_code": "10000",
+            "address": "2445, Dallas, TexasUSA",
+            "createdAt": "2021-08-17 22:44:30"
+        },
+        {
+            "id": "f8861bb0-ffa4-11eb-a92e-ef5c743fa46e5",
+            "name": "Houston Pickup",
+            "title": "Houston Pickup",
+            "country": "USA",
+            "state": "Texas",
+            "city": "Houston",
+            "zip_code": "10000",
+            "address": "11034, Houston, Texas, USA",
+            "createdAt": "2021-08-17 22:49:17"
+        },
+        {
+            "id": "f8861bb0-ffa4-11eb-a92e-ef5c74fa46e5",
+            "name": "Miami Pickup",
+            "title": "Miami Pickup",
+            "country": "USA",
+            "state": "Florida",
+            "city": "Miami",
+            "zip_code": "10000",
+            "address": "13434, Miami, Florida, USA",
+            "createdAt": "2021-08-17 22:49:17"
+        }
+    ],
+    "schedules": [
+        {
+            "id": "425611b0-fe14-11eb-8c9a-53af01a56711",
+            "name": "First schedule",
+            "frequency": "weekly",
+            "duration": "12",
+            "createdAt": "2021-08-15 23:0:53"
+        },
+        {
+            "id": "a8d27d20-fe14-11eb-b159-1bf841839295",
+            "name": "Second schedule",
+            "frequency": "bi-weekly",
+            "duration": "20",
+            "createdAt": "2021-08-15 23:3:45"
+        },
+        {
+            "id": "b9cea220-fe14-11eb-9270-d725bb0e9708",
+            "name": "Third schedule",
+            "frequency": "monthly",
+            "duration": "6",
+            "createdAt": "2021-08-15 23:4:13"
         }
     ]
 }

@@ -1,12 +1,13 @@
-const Product = require("../models/product");
+const Schedule = require("../models/schedule");
 const { validationResult } = require("express-validator/check");
 const uniqueId = require("../utils/uuid");
 const currentDate = require("../utils/dateTime");
+
 const errorFormatter = ({ location, msg, param, value, nestedErrors }) => {
   return `${param}: ${msg}`;
 };
 
-exports.createProduct = async (req, res, next) => {
+exports.createSchedule = async (req, res, next) => {
   const errors = validationResult(req).formatWith(errorFormatter);
   if (!errors.isEmpty()) {
     const error = new Error("Validation failed, entered data is incorrect.");
@@ -15,23 +16,19 @@ exports.createProduct = async (req, res, next) => {
     next(error);
   } else {
     const name = req.body.name;
-    const title = req.body.title;
-    const description = req.body.description;
-    const unit_price = req.body.unit_price;
-    const image = req.body.image;
-    const product = new Product(
+    const frequency = req.body.frequency;
+    const duration = req.body.duration;
+    const schedule = new Schedule(
       (id = uniqueId),
       name,
-      title,
-      description,
-      unit_price,
-      image,
+      frequency,
+      duration,
       (createdAt = currentDate)
     );
     try {
-      const result = await product.save();
+      const result = await schedule.save();
       res.status(201).json({
-        message: "Product created successfully",
+        message: "Schedule created successfully",
         data: result,
       });
     } catch (err) {
@@ -43,12 +40,12 @@ exports.createProduct = async (req, res, next) => {
   }
 };
 
-exports.getProducts = async (req, res, next) => {
+exports.fetchSchedules = async (req, res, next) => {
   try {
-    let products = await Product.allProducts();
+    let schedules = await Schedule.allSchedules();
     res.status(200).json({
-      message: "Product fetched",
-      data: products,
+      message: "Schedule fetched",
+      data: schedules,
     });
   } catch (err) {}
 };

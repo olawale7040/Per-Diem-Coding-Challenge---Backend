@@ -1,37 +1,43 @@
-const Product = require("../models/product");
+const Pickup = require("../models/pickup");
 const { validationResult } = require("express-validator/check");
 const uniqueId = require("../utils/uuid");
 const currentDate = require("../utils/dateTime");
+
 const errorFormatter = ({ location, msg, param, value, nestedErrors }) => {
   return `${param}: ${msg}`;
 };
 
-exports.createProduct = async (req, res, next) => {
+exports.createPickup = async (req, res, next) => {
   const errors = validationResult(req).formatWith(errorFormatter);
   if (!errors.isEmpty()) {
-    const error = new Error("Validation failed, entered data is incorrect.");
     error.statusCode = 422;
     error.data = errors.array();
     next(error);
+    // throw error;
   } else {
     const name = req.body.name;
     const title = req.body.title;
-    const description = req.body.description;
-    const unit_price = req.body.unit_price;
-    const image = req.body.image;
-    const product = new Product(
+    const country = req.body.country;
+    const state = req.body.state;
+    const city = req.body.city;
+    const zip_code = req.body.zip_code;
+    const address = req.body.address;
+
+    const pickup = new Pickup(
       (id = uniqueId),
       name,
       title,
-      description,
-      unit_price,
-      image,
+      country,
+      state,
+      city,
+      zip_code,
+      address,
       (createdAt = currentDate)
     );
     try {
-      const result = await product.save();
+      const result = await pickup.save();
       res.status(201).json({
-        message: "Product created successfully",
+        message: "Pickup created successfully",
         data: result,
       });
     } catch (err) {
@@ -43,12 +49,12 @@ exports.createProduct = async (req, res, next) => {
   }
 };
 
-exports.getProducts = async (req, res, next) => {
+exports.fetchPickups = async (req, res, next) => {
   try {
-    let products = await Product.allProducts();
+    let pickups = await Pickup.allPickups();
     res.status(200).json({
-      message: "Product fetched",
-      data: products,
+      message: "Pickups fetched",
+      data: pickups,
     });
   } catch (err) {}
 };
