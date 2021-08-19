@@ -32,4 +32,8 @@ app.use((error, req, res, next) => {
   res.status(status).json({ message: message, data: data });
 });
 
-app.listen(5000);
+const Port = process.env.PORT || 5000;
+
+app.listen(Port, () => {
+  console.log(`::#Backend${Port}`);
+});
