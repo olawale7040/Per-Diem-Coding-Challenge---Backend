@@ -11,7 +11,7 @@ const productRoutes = require("./routes/product");
 const scheduleRoutes = require("./routes/schedule");
 const pickupRoutes = require("./routes/pickup");
 
-app.use(bodyParser.json()); // application/json
+// app.use(bodyParser.json()); // application/json
 
 app.use((req, res, next) => {
   res.header(
